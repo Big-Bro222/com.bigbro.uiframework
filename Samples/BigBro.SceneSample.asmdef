@@ -1,0 +1,16 @@
+{
+    "name": "BigBro.SceneSample",
+    "rootNamespace": "",
+    "references": [
+        "GUID:32cd7fcd53200964a97569ec1d0dbf14"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

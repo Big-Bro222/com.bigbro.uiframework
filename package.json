@@ -1,0 +1,28 @@
+{
+    "name": "com.bigbro.unity.uiframework",
+    "version": "0.0.1",
+    "displayName": "UIFramework",
+    "description": "This is a framework to handle UI logics",
+    "unity":"2018.3",
+    "documentationUrl": "README.md",
+    "changelogUrl": "https://keepachangelog.com/en/1.0.0/",
+    "dependencies": {
+        "com.unity.textmeshpro":"3.0.6"
+    },
+    "samples":[
+    {
+        "displayName":"Scenes sample",
+        "description":"Put an Example scene here",
+        "path":"Samples~/SceneSample"
+    }
+    ],
+    "keywords": [
+        "3D",
+        "framework",
+        "UI"
+    ],
+    "author": {
+        "name": "BigBro",
+        "email": "Ze.Qi@outlook.com"
+    }
+}
