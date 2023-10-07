@@ -1,6 +1,6 @@
 {
     "name": "com.bigbro.unity.uiframework",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "displayName": "UIFramework",
     "description": "This is a framework to handle UI logics",
     "unity":"2018.3",
