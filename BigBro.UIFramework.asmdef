@@ -1,0 +1,16 @@
+{
+    "name": "BigBro.UIFramework",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d0bde41d7a78e924e8ccc9a8e56e9011"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

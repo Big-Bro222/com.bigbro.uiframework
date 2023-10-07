@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace BigBro.UIframework
@@ -7,8 +8,13 @@ namespace BigBro.UIframework
     {
         void Awake()
         {
-           UIManager.Instance.SetParentCanvas(GetComponent<Canvas>());
+           UIManager.Instance?.SetParentCanvas(GetComponent<Canvas>());
         }
 
+        private void OnDestroy()
+        {
+            //when switch scene, unregister the UIPanels
+            UIManager.Instance?.CloseAll();
+        }
     }
 }

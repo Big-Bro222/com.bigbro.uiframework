@@ -12,7 +12,7 @@
     "samples":[
     {
         "displayName":"Scenes sample",
-        "description":"Put an Example scene here",
+        "description":"A simple scene example for how to use the basic uiframework",
         "path":"Samples~/SceneSample"
     }
     ],

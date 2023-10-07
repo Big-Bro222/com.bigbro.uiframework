@@ -27,7 +27,7 @@ namespace BigBro.UIframework
 
         private void Update()
         {
-            Debug.Log("UiStack count: "+ _uiStack.Count);
+            //Debug.Log("UiStack count: "+ _uiStack.Count);
         }
 
         public void SetParentCanvas(Canvas rootCanvas)
@@ -81,8 +81,6 @@ namespace BigBro.UIframework
             {
                 panelsDic.Add(uiPanelBase.name,uiPanelBase);
             }
-            
-            Debug.Log("registered panels: "+uiPanelBases.Length);
         }
         private UIPanelBase GetPanel(string panelName)
         {
