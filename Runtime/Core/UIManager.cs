@@ -39,7 +39,7 @@ namespace BigBro.UIframework
         // Close All the panels
         public void CloseAll()
         {
-            while (_uiStack.Count!=0)
+            while (_uiStack.Count != 0)
             {
                 PopPanel();
             }
@@ -48,7 +48,7 @@ namespace BigBro.UIframework
         // Close a certain amount of layers of panel
         public void ClosePanelsOnTop(int panelCount)
         {
-            while (panelCount>0)
+            while (panelCount > 0)
             {
                 PopPanel();
             }
@@ -64,11 +64,14 @@ namespace BigBro.UIframework
         private Stack<UIPanelBase> _uiStack = new Stack<UIPanelBase>();
 
 
-        public UIPanelBase OpenPanel(string panelName)
+        public UIPanelBase OpenPanel(string panelName, Action<UIPanelBase> setup = null)
         {
-           return PushPanel(panelName);
+            UIPanelBase panel = PushPanel(panelName);
+            //This setup is used for inject refs will the panel is opened
+            setup?.Invoke(panel);
+            return PushPanel(panelName);
         }
-        
+
         public void CloseCurrentPanel()
         {
             PopPanel();
@@ -79,20 +82,22 @@ namespace BigBro.UIframework
             UIPanelBase[] uiPanelBases = UIPanelCanvas.transform.GetComponentsInChildren<UIPanelBase>();
             foreach (var uiPanelBase in uiPanelBases)
             {
-                panelsDic.Add(uiPanelBase.name,uiPanelBase);
+                panelsDic.Add(uiPanelBase.name, uiPanelBase);
             }
         }
+
         private UIPanelBase GetPanel(string panelName)
         {
             return panelsDic[panelName];
         }
-        
+
         private void PopPanel()
         {
             if (_uiStack.Count <= 0)
             {
                 return;
             }
+
             //close current panel
             UIPanelBase topPanel = _uiStack.Pop();
             topPanel.Close();
@@ -104,7 +109,7 @@ namespace BigBro.UIframework
                 panel.Resume();
             }
         }
-        
+
         private UIPanelBase PushPanel(string panelName)
         {
             //Pause the previous menu

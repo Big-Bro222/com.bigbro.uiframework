@@ -27,7 +27,7 @@ namespace BigBro.UIframework
 
         private void Login()
         {
-            UIManager.Instance.OpenPanel("DialogUIPanel");
+            UIManager.Instance.OpenPanel("DialogUIPanel",null);
         }
     }
 }

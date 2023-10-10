@@ -16,7 +16,7 @@ namespace BigBro.UIframework
         public event Action OnOpenPanelEvent;
 
 
-        public virtual void Open()
+        internal virtual void Open()
         {
             gameObject.SetActive(true);
             state = UIState.Open;
@@ -25,7 +25,7 @@ namespace BigBro.UIframework
             OnOpenPanelEvent?.Invoke();
         }
 
-        public virtual void Close()
+        internal virtual void Close()
         {
             gameObject.SetActive(false);
             state = UIState.Close;
@@ -64,7 +64,7 @@ namespace BigBro.UIframework
             else
             {
                 Debug.Log("Open "+ name);
-                UIManager.Instance.OpenPanel(name);
+                UIManager.Instance.OpenPanel(name,null);
             }
         }
 
