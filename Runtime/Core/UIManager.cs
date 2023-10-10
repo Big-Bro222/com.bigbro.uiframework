@@ -64,12 +64,10 @@ namespace BigBro.UIframework
         private Stack<UIPanelBase> _uiStack = new Stack<UIPanelBase>();
 
 
-        public UIPanelBase OpenPanel(string panelName, Action<UIPanelBase> setup = null)
+        public UIPanelBase OpenPanel(string panelName, Action<UIPanelBase> beforeOpen = null)
         {
-            UIPanelBase panel = PushPanel(panelName);
-            //This setup is used for inject refs will the panel is opened
-            setup?.Invoke(panel);
-            return PushPanel(panelName);
+            UIPanelBase panel = PushPanel(panelName,beforeOpen);
+            return panel;
         }
 
         public void CloseCurrentPanel()
@@ -110,7 +108,7 @@ namespace BigBro.UIframework
             }
         }
 
-        private UIPanelBase PushPanel(string panelName)
+        private UIPanelBase PushPanel(string panelName,Action<UIPanelBase>beforeOpen = null)
         {
             //Pause the previous menu
             if (_uiStack.Count > 0)
@@ -121,6 +119,7 @@ namespace BigBro.UIframework
 
             UIPanelBase panel = GetPanel(panelName);
             _uiStack.Push(panel);
+            beforeOpen?.Invoke(panel);
             panel.Open();
             return panel;
         }

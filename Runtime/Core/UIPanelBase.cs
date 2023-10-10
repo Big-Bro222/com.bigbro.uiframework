@@ -64,7 +64,7 @@ namespace BigBro.UIframework
             else
             {
                 Debug.Log("Open "+ name);
-                UIManager.Instance.OpenPanel(name,null);
+                UIManager.Instance.OpenPanel(name);
             }
         }
 
